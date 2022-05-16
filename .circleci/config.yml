@@ -49,9 +49,9 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run:
-        name: backup step
-        command: echo "hello Error!"
-        when: on_fail   
+          name: backup step
+          command: echo "hello Error!"
+          when: on_fail   
 workflows:
   say-hello-workflow:
     jobs:
