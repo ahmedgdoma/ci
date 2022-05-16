@@ -44,19 +44,15 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: return 1
-  backup_job:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
       - run:
           name: backup step
           command: echo "hello Error!"
-          when: on_fail   
+          when: on_fail
+         
 workflows:
   say-hello-workflow:
     jobs:
       - fail_job
-      - backup_job
       # - save_hello_world_output
       # - print_output_file:
       #     requires:
